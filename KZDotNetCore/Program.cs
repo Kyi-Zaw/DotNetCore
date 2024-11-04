@@ -1,4 +1,5 @@
 using KZDotNetCore.Domain.Database;
+using KZDotNetCore.Domain.Features.Snake;
 using KZDotNetCore.Domain.Features.Todo;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,7 +13,8 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
     
 });
 
-builder.Services.AddScoped<ITodoServices, ToDoEfService>(); // Singleton, Scoped, Transient
+builder.Services.AddScoped<ITodoServices, ToDoEfService>(); 
+builder.Services.AddScoped<ISnakeService, SnakeEfService>(); 
 
 
 builder.Services.AddControllers();

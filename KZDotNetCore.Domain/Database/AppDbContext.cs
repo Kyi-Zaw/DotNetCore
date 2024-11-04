@@ -11,4 +11,6 @@ public class AppDbContext : DbContext
 
     public DbSet<TodoDataModel> Todos { get; set; }
 
+    public DbSet<SnakeDataModel> snakes { get; set; }
+
 }
