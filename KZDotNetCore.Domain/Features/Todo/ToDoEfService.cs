@@ -1,4 +1,5 @@
 ﻿using KZDotNetCore.Domain.Database;
+using KZDotNetCore.Domain.Models.Todo;
 using Microsoft.EntityFrameworkCore;
 using PIDDotNetTraining.Domain.Models;
 using System;

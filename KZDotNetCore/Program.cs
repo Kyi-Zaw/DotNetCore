@@ -16,9 +16,8 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 builder.Services.AddScoped(n => new DapperService(builder.Configuration.GetConnectionString("Connection")));
 builder.Services.AddScoped(n => new AdoDotNetService(builder.Configuration.GetConnectionString("Connection")));
 
-//builder.Services.AddScoped<ITodoServices, ToDoEfService>(); 
-////builder.Services.AddScoped<ISnakeService, SnakeEfService>(); 
-
+builder.Services.AddScoped<ITodoServices, ToDoEfService>(); 
+//builder.Services.AddScoped<ISnakeService, SnakeEfService>(); 
 //builder.Services.AddScoped<ISnakeService, SnakeDapperService>();
 builder.Services.AddScoped<ISnakeService, SnakeAdoDotNetService>();
 

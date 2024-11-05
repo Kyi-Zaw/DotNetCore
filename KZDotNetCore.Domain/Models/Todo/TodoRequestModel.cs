@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PIDDotNetTraining.Domain.Models;
+namespace KZDotNetCore.Domain.Models.Todo;
 
 // Client
 public class TodoRequestModel

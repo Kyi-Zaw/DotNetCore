@@ -1,5 +1,4 @@
-﻿using PIDDotNetTraining.Domain.Models;
-
+﻿using KZDotNetCore.Domain.Models.Todo;
 
 namespace KZDotNetCore.Domain.Features.Todo
 {

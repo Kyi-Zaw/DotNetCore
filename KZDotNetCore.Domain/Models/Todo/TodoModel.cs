@@ -1,4 +1,4 @@
-﻿namespace PIDDotNetTraining.Domain.Models;
+﻿namespace KZDotNetCore.Domain.Models.Todo;
 
 public class TodoModel
 {

@@ -1,4 +1,6 @@
-﻿namespace PIDDotNetTraining.Domain.Models;
+﻿using PIDDotNetTraining.Domain.Models;
+
+namespace KZDotNetCore.Domain.Models.Todo;
 
 // Server
 public class TodoResponseModel

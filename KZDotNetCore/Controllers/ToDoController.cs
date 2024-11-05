@@ -1,7 +1,7 @@
 ﻿using KZDotNetCore.Domain.Features;
 using KZDotNetCore.Domain.Features.Todo;
+using KZDotNetCore.Domain.Models.Todo;
 using Microsoft.AspNetCore.Mvc;
-using PIDDotNetTraining.Domain.Models;
 
 namespace KZDotNetCore.Controllers
 {
