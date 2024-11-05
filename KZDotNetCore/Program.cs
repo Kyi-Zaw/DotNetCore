@@ -1,6 +1,7 @@
 using KZDotNetCore.Domain.Database;
 using KZDotNetCore.Domain.Features.Snake;
 using KZDotNetCore.Domain.Features.Todo;
+using KZDotNetCore.Domain.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,12 +13,15 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("Connection"));
     
 });
+builder.Services.AddScoped(n => new DapperService(builder.Configuration.GetConnectionString("Connection")));
+builder.Services.AddScoped(n => new AdoDotNetService(builder.Configuration.GetConnectionString("Connection")));
 
-builder.Services.AddScoped<ITodoServices, ToDoEfService>(); 
-builder.Services.AddScoped<ISnakeService, SnakeEfService>(); 
+//builder.Services.AddScoped<ITodoServices, ToDoEfService>(); 
+////builder.Services.AddScoped<ISnakeService, SnakeEfService>(); 
 
+//builder.Services.AddScoped<ISnakeService, SnakeDapperService>();
+builder.Services.AddScoped<ISnakeService, SnakeAdoDotNetService>();
 
-builder.Services.AddControllers();
 
 
 builder.Services.AddControllers();
