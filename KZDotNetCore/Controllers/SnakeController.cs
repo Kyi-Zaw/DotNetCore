@@ -32,9 +32,9 @@ namespace KZDotNetCore.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            var model = _iSnakeService.Get();
+            var model = await _iSnakeService.Get();
             if (model.Response.IsError)
             {
                 return BadRequest(model);
@@ -43,9 +43,9 @@ namespace KZDotNetCore.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetByID(int id)
+        public async Task<IActionResult> GetByID(int id)
         {
-            var model = _iSnakeService.GetByID(id);
+            var model =await _iSnakeService.GetByID(id);
             if (model.Response.IsError)
             {
                 return BadRequest(model);

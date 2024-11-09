@@ -73,7 +73,7 @@ namespace KZDotNetCore.Domain.Features.Snake
             return model;
         }
 
-        public SnakeListResponseModel Get()
+        public async Task<SnakeListResponseModel> Get()
         {
             SnakeListResponseModel model = new SnakeListResponseModel();
             try
@@ -93,12 +93,12 @@ namespace KZDotNetCore.Domain.Features.Snake
             return model;
         }
 
-        public SnakeResponseModel GetByID(int id)
+        public async Task<SnakeResponseModel> GetByID(int id)
         {
             SnakeResponseModel model = new SnakeResponseModel();
             try
             {
-                SnakeDataModel lst = _db.snakes.FirstOrDefault(x => x.SnakeID == id);
+                SnakeDataModel lst = await _db.snakes.FirstOrDefaultAsync(x => x.SnakeID == id);
 
                 if (lst is null)
                 {

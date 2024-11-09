@@ -114,7 +114,7 @@ namespace KZDotNetCore.Domain.Features.Snake
             return snakeResponseModel;
         }
 
-        public SnakeListResponseModel Get()
+        public async Task<SnakeListResponseModel> Get()
         {
             SnakeListResponseModel response = new SnakeListResponseModel();
 
@@ -139,13 +139,13 @@ namespace KZDotNetCore.Domain.Features.Snake
                 snakeModel.IsDanger = dr["IsDanger"].ToString();
                 lst.Add(snakeModel);
             }
-            response.Data = lst;
+            response.Data =  lst;
             response.Response = ResponseModel.Success();
 
             return response;
         }
 
-        public SnakeResponseModel GetByID(int id)
+        public async Task<SnakeResponseModel> GetByID(int id)
         {
             SnakeResponseModel snakeResponseModel = new SnakeResponseModel();
             SnakeModel snakeModel = new SnakeModel();

@@ -89,7 +89,7 @@ namespace KZDotNetCore.Domain.Features.Snake
             return model;
         }
 
-        public SnakeListResponseModel Get()
+        public async Task<SnakeListResponseModel> Get()
         {
             SnakeListResponseModel model = new SnakeListResponseModel();
 
@@ -115,7 +115,7 @@ namespace KZDotNetCore.Domain.Features.Snake
             return model;
         }
 
-        public SnakeResponseModel GetByID(int id)
+        public async Task<SnakeResponseModel> GetByID(int id)
         {
             SnakeResponseModel model = new SnakeResponseModel();
 

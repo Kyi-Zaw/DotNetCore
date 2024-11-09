@@ -18,16 +18,16 @@ namespace KZDotNetCoreMinimalApi.Endpoints.Snake
         }
         public static void UseSnakeEndpoint(this IEndpointRouteBuilder app)
         {
-            app.MapGet("/api/snake", (ISnakeService snakeService) =>
+            app.MapGet("/api/snake", async (ISnakeService snakeService) =>
             {
-                return Results.Ok(snakeService.Get());
+                return Results.Ok(await snakeService.Get());
             })
             .WithName("GetSnake")
             .WithOpenApi();
 
-            app.MapGet("/api/snake/{id}", (int id, ISnakeService snakeService) =>
+            app.MapGet("/api/snake/{id}", async (int id, ISnakeService snakeService) =>
             {
-                var item = snakeService.GetByID(id);
+                var item = await snakeService.GetByID(id);
                 
                 return item.Response.IsSuccess ? Results.Ok(item) : Results.BadRequest(item);
             })

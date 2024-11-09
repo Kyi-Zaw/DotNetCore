@@ -12,8 +12,8 @@ namespace KZDotNetCore.Domain.Features.Snake
     {
         SnakeResponseModel Create(SnakeRequestModel requestModel);
         SnakeResponseModel Delete(int id);
-        SnakeListResponseModel Get();
-        SnakeResponseModel GetByID(int id);
+        Task<SnakeListResponseModel> Get();
+        Task<SnakeResponseModel> GetByID(int id);
         SnakeResponseModel Update(int id, SnakeRequestModel requestModel);
     }
 }
